@@ -45,6 +45,12 @@ In order to make sense of the data we recommend changing the Payload Function in
     };
     }
 
+## Node.js Server for web API
+This guide will walk you through setting up a Node.js project that listens to device activations and messages and responds to every 3rd message.
+
+[Link to Node.js Server Setup]
+
+
 ## Future Steps
 We won't stop here. For us this prototype means there is even more cool work ahead of us. We will give talks, host workshops and develop prototypes of real life applications, in order to start discussions of meaning and possibilities of the LoRaWAN Technology. We believe this little boost in the IoT technology sector hides a great potential that can be used by a wide range of people and businesses.
 
@@ -64,6 +70,7 @@ This project is licensed under the MIT License
 Matthijs Kooijman (Providing the LMIC Library)
 https://github.com/matthijskooijman
 
+[Link to Node.js Server Setup]: https://www.thethingsnetwork.org/docs/applications/nodejs/quick-start.html
 [Creating a TTN Node]:	https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html
 [link to HAL lib]: http://playground.arduino.cc/Code/HardwareAbstraction
 [link to lmic lib]:	https://github.com/matthijskooijman/arduino-lmic
