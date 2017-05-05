@@ -75,8 +75,8 @@ This project is licensed under the MIT License
 ## Acknowledgments
 Matthijs Kooijman (Providing the LMIC Library)
 https://github.com/matthijskooijman
-[here] https://github.com/technologiestiftung/LoRaWAN-Frontend
-[Link to our Node.js implementation] https://github.com/technologiestiftung/LoRaWAN-Server
+[here]: https://github.com/technologiestiftung/LoRaWAN-Frontend
+[Link to our Node.js implementation]: https://github.com/technologiestiftung/LoRaWAN-Server
 [Link to Node.js Server Setup]: https://www.thethingsnetwork.org/docs/applications/nodejs/quick-start.html
 [Creating a TTN Node]:	https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html
 [link to HAL lib]: http://playground.arduino.cc/Code/HardwareAbstraction
