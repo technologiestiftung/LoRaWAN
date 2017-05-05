@@ -1,5 +1,5 @@
 # Sensor > Node > Gateway > TTN > Database/Server > Webapp
-This intro provides all the information neccessary to enable your self assembled node reading sensory data, sending it to The Things Network via an existing gateway and making sense of the data you'll see in the TTN console.
+This intro provides all the information necessary to enable your self assembled node reading sensory data, sending it to The Things Network via an existing gateway and making sense of the data you'll see in the TTN console.
 ## Pre-requisites
 #### (the provided code was tested only with this particular hardware/softwarelibrary combination)
 
@@ -50,12 +50,6 @@ This guide will walk you through setting up a Node.js project that listens to de
 
 [Link to Node.js Server Setup]
 
-[Link to our Node.js implementation]
-
-## Webapp
-
-Grab the data and go crazy! Our first frontend project can be found [here]
-
 
 ## Future Steps
 We won't stop here. For us this prototype means there is even more cool work ahead of us. We will give talks, host workshops and develop prototypes of real life applications, in order to start discussions of meaning and possibilities of the LoRaWAN Technology. We believe this little boost in the IoT technology sector hides a great potential that can be used by a wide range of people and businesses.
@@ -75,8 +69,7 @@ This project is licensed under the MIT License
 ## Acknowledgments
 Matthijs Kooijman (Providing the LMIC Library)
 https://github.com/matthijskooijman
-[here]: https://github.com/technologiestiftung/LoRaWAN-Frontend
-[Link to our Node.js implementation]: https://github.com/technologiestiftung/LoRaWAN-Server
+
 [Link to Node.js Server Setup]: https://www.thethingsnetwork.org/docs/applications/nodejs/quick-start.html
 [Creating a TTN Node]:	https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html
 [link to HAL lib]: http://playground.arduino.cc/Code/HardwareAbstraction
