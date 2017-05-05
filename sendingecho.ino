@@ -1,6 +1,6 @@
 
 /*******************************************************************************
- * TSB LoraNode with Ultrasound sensor. 
+ * TSB LoraNode with Ultrasound sensor.
  * Based on https://github.com/matthijskooijman/arduino-lmic/blob/master/examples/ttn-abp/ttn-abp.ino
  * by Thomas Telkamp and Matthijs Kooijman
  *To use this sketch on another Node please register a new device om TTN and change the Network Session Key, Application Key, etc
@@ -18,15 +18,15 @@
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
 // ***** End Ultrasonic *******/
 
-// Put your LoRaWAN network session key here
-static const PROGMEM u1_t NWKSKEY[16] = { 0x49, 0x4A, 0x96, 0x2B, 0x29, 0x73, 0xBB, 0xB7, 0x1E, 0xC3, 0xDA, 0xE3, 0x0C, 0x16, 0x41, 0xE9 };
+// Put your LoRaWAN network session key here in the format: 0x49, 0x4A, 0x96, 0x2B, 0x29 [...];
+static const PROGMEM u1_t NWKSKEY[16] = {};
 
-// Put your LoRaWAN application session key here
-static const u1_t PROGMEM APPSKEY[16] = { 0x8E, 0x1B, 0xCE, 0x1F, 0xAA, 0x21, 0x1C, 0x45, 0x92, 0x88, 0xFB, 0xC7, 0x39, 0x02, 0x2F, 0xA8 };
+// Put your LoRaWAN application session key here in the format:  0x8E, 0x1B, 0xCE, 0x1F, 0xAA, 0x21 [...]
+static const u1_t PROGMEM APPSKEY[16] = {};
 
 // Put your LoRaWAN end-device address (DevAddr) here
 // See http://thethingsnetwork.org/wiki/AddressSpace
-static const u4_t DEVADDR = { 0x26011249 } ; // <-- Change this address for every node!
+static const u4_t DEVADDR = {} ; // <-- Change this address for every node!
 
 // These callbacks are only used in over-the-air activation, so they are
 // left empty here (we cannot leave them out completely unless
@@ -123,7 +123,7 @@ void do_send(osjob_t* j){
         Serial.println(F("OP_TXRXPEND, not sending"));
     } else {
         // Prepare upstream data transmission at the next possible time.
-        LMIC_setTxData2(1, message, sizeof(message), 0); 
+        LMIC_setTxData2(1, message, sizeof(message), 0);
         Serial.println(F("Packet queued"));
     }
     // Next TX is scheduled after TX_COMPLETE event.
@@ -132,8 +132,8 @@ void do_send(osjob_t* j){
 void setup() {
     Serial.begin(115200);
     Serial.println(F("Starting"));
-    
-  
+
+
     // LMIC init
     os_init();
     // Reset the MAC state. Session and pending data transfers will be discarded.
@@ -151,7 +151,7 @@ void setup() {
     memcpy_P(nwkskey, NWKSKEY, sizeof(NWKSKEY));
     LMIC_setSession (0x1, DEVADDR, nwkskey, appskey);
     #else
-    // If not running an AVR with PROGMEM, just use the arrays directly 
+    // If not running an AVR with PROGMEM, just use the arrays directly
     LMIC_setSession (0x1, DEVADDR, NWKSKEY, APPSKEY);
     #endif
 
@@ -166,11 +166,11 @@ void setup() {
 void loop() {
       delay(2000);
   distance = sonar.ping_cm();  //calls ultrasonic sensor via NewPing library
-  
+
   if (distance > 10 || distance == 0) { // 0 could be a sensor error, therefore does not trigger
         Serial.print("Not sending, value: ");
         Serial.println(distance);
-           
+
     } else {
         Serial.print(F("TRIGGERED! Value: "));
         Serial.println(distance);
@@ -180,7 +180,7 @@ void loop() {
         Serial.print(message[0]);
         Serial.println(message[1]);
         // Prepare upstream data transmission at the next possible time.
-        do_send(&sendjob);               
+        do_send(&sendjob);
     };
     os_runloop_once(); // LMIC needs this
 }
