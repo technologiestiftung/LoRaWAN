@@ -4,7 +4,7 @@ This intro provides all the information necessary to enable your self assembled 
 #### (the provided code was tested only with this particular hardware/softwarelibrary combination)
 
 1. Arduino Uno
-2. Dragino LoRa GPS Shield + Dragino LoRa Bee
+2. Dragino LoRa Shield + Dragino LoRa Bee
 2. USB cable
 3. Updated IDE (Arduino, Atom, ..)
 4. basic understanding of what Arduino is and does
